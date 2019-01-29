@@ -1,3 +1,11 @@
-gt/com/atel/implementation/IdentificationGenerator.class
+gt/com/atel/qualifiers/ItOffice.class
 gt/com/atel/cdiex1/Employee.class
-gt/com/atel/implementation/IdGenerator.class
+gt/com/atel/idgeneratorimplementation/IdentificationGenerator.class
+gt/com/atel/qualifiers/AccountingOffice.class
+gt/com/atel/qualifiers/PersonIdGenerator.class
+gt/com/atel/idgeneratorimplementation/EmployeeIdGeneratorImpl.class
+gt/com/atel/assignofficeimplementation/AssignOfficeImplementation.class
+gt/com/atel/qualifiers/EmployeeIdGeneretor.class
+gt/com/atel/assignofficeimplementation/AssignItOfficeImpl.class
+gt/com/atel/idgeneratorimplementation/PersonIdGeneratorImpl.class
+gt/com/atel/assignofficeimplementation/AssignAccountingOfficeImpl.class

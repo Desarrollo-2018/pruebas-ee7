@@ -5,8 +5,11 @@
  */
 package gt.com.atel.cdiex1;
 
-import gt.com.atel.implementation.IdGenerator;
-import gt.com.atel.implementation.IdentificationGenerator;
+import gt.com.atel.assignofficeimplementation.AssignItOfficeImpl;
+import gt.com.atel.assignofficeimplementation.AssignOfficeImplementation;
+import gt.com.atel.idgeneratorimplementation.IdentificationGenerator;
+import gt.com.atel.qualifiers.AccountingOffice;
+import gt.com.atel.qualifiers.PersonIdGenerator;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -24,15 +27,29 @@ public class Employee implements Serializable {
     private String name;
     private String lastName;
     private String employeeId;
+    private String officeAssigned;
     
     @Inject
-    private IdentificationGenerator identificationGenerator;
+    @PersonIdGenerator
+    private IdentificationGenerator idGenerator;
+    
+    @Inject
+    @AccountingOffice
+    private AssignOfficeImplementation assignOfficeImpl;
     
     @PostConstruct
     public void init(){
-        this.employeeId = this.identificationGenerator.generateNumber();
+        this.employeeId = this.idGenerator.generateNumber();
+        this.officeAssigned = this.assignOfficeImpl.assignOffice();
     }
-    
+
+    public String getOfficeAssigned() {
+        return officeAssigned;
+    }
+
+    public void setOfficeAssigned(String officeAssigned) {
+        this.officeAssigned = officeAssigned;
+    }
     
     public String getName() {
         return name;

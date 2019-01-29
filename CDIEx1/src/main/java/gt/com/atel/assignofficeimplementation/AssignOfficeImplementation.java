@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gt.com.atel.implementation;
+package gt.com.atel.assignofficeimplementation;
 
 /**
  *
- * @author atel
+ * @author victor
  */
-public interface IdentificationGenerator  {
+public interface AssignOfficeImplementation {
     
-    public String generateNumber();
+    public String assignOffice();
+    
 }

@@ -1,3 +1,11 @@
-/home/atel/test/EE7/CDIEx1/src/main/java/gt/com/atel/implementation/IdentificationGenerator.java
-/home/atel/test/EE7/CDIEx1/src/main/java/gt/com/atel/cdiex1/Employee.java
-/home/atel/test/EE7/CDIEx1/src/main/java/gt/com/atel/implementation/IdGenerator.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/qualifiers/ItOffice.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/assignofficeimplementation/AssignAccountingOfficeImpl.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/idgeneratorimplementation/PersonIdGeneratorImpl.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/idgeneratorimplementation/IdentificationGenerator.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/qualifiers/EmployeeIdGeneretor.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/cdiex1/Employee.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/qualifiers/AccountingOffice.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/assignofficeimplementation/AssignItOfficeImpl.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/qualifiers/PersonIdGenerator.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/idgeneratorimplementation/EmployeeIdGeneratorImpl.java
+/home/victor/test-java/pruebas-ee7/CDIEx1/src/main/java/gt/com/atel/assignofficeimplementation/AssignOfficeImplementation.java
