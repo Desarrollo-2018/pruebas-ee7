@@ -5,11 +5,18 @@
  */
 package gt.com.atel.cdiex1;
 
+import gt.com.atel.assigncar.implementation.CarService;
 import gt.com.atel.assignofficeimplementation.AssignItOfficeImpl;
 import gt.com.atel.assignofficeimplementation.AssignOfficeImplementation;
+import gt.com.atel.bossassigner.implementation.BossAssignerService;
+import gt.com.atel.greeting.GreetingService;
+import gt.com.atel.greeting.Position;
+import gt.com.atel.greeting.TypeOfPosition;
 import gt.com.atel.idgeneratorimplementation.IdentificationGenerator;
 import gt.com.atel.qualifiers.AccountingOffice;
+import gt.com.atel.qualifiers.CarAssigner;
 import gt.com.atel.qualifiers.PersonIdGenerator;
+import gt.com.atel.qualifiers.TypeOfCars;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -28,6 +35,9 @@ public class Employee implements Serializable {
     private String lastName;
     private String employeeId;
     private String officeAssigned;
+    private String carAssigned;
+    private String bossAssigned;
+    private String greeting;
     
     @Inject
     @PersonIdGenerator
@@ -37,12 +47,48 @@ public class Employee implements Serializable {
     @AccountingOffice
     private AssignOfficeImplementation assignOfficeImpl;
     
+    @Inject
+    @CarAssigner(type = TypeOfCars.MAZDA)
+    private CarService carService;
+    
+    @Inject
+    private BossAssignerService bossAssignerService;
+    
+    @Inject
+    @Position(type = TypeOfPosition.MANAGER)
+    private GreetingService greetingServiceManager;
+    
+    @Inject
+    @Position(type = TypeOfPosition.SUPERVISOR)
+    private GreetingService greetingServiceSupervisor;
+    
     @PostConstruct
     public void init(){
         this.employeeId = this.idGenerator.generateNumber();
         this.officeAssigned = this.assignOfficeImpl.assignOffice();
+        this.carAssigned = this.carService.assignCarToEmployee();
+        this.bossAssigned = this.bossAssignerService.assignBoss();
+        this.greeting = this.greetingServiceSupervisor.greetEmployee();
     }
 
+    public String getBossAssigned() {
+        return bossAssigned;
+    }
+
+    public void setBossAssigned(String bossAssigned) {
+        this.bossAssigned = bossAssigned;
+    }
+    
+    
+    public String getCarAssigned() {
+        return carAssigned;
+    }
+
+    
+    public void setCarAssigned(String carAssigned) {
+        this.carAssigned = carAssigned;
+    }
+    
     public String getOfficeAssigned() {
         return officeAssigned;
     }
@@ -74,5 +120,15 @@ public class Employee implements Serializable {
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
+
+    public String getGreeting() {
+        return greeting;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
+    
+    
 
 }
