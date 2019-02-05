@@ -5,8 +5,10 @@
  */
 package gt.com.atel.bossassigner.implementation;
 
+import gt.com.atel.interceptors.LoggingInterceptor;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import javax.interceptor.Interceptors;
 
 /**
  *
@@ -17,6 +19,7 @@ import javax.inject.Named;
 public class BossAssignerImpl implements BossAssignerService{
 
     @Override
+    @Interceptors(LoggingInterceptor.class)
     public String assignBoss() {
         return "Your boss will be John";
     }

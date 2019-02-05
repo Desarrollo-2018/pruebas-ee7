@@ -5,12 +5,15 @@
  */
 package gt.com.atel.assigncar.implementation;
 
+import gt.com.atel.interceptors.Loggable;
+
 /**
  *
  * @author atel
  */
 public interface CarService {
     
+    @Loggable
     public String assignCarToEmployee();
     
 }
